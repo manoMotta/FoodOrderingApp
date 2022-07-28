@@ -8,6 +8,9 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
+
+  box-shadow: 0 3px 8px rgba(57, 63, 72, 0.3);
+  z-index: 100;
 }
 
 .item {
