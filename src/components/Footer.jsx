@@ -1,4 +1,4 @@
-import styles from "../styles/Footer.module.css"
+import styles from "../styles/Footer.module.scss"
 import Image from "next/image"
 import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
 

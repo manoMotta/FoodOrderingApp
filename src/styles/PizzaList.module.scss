@@ -10,9 +10,7 @@
   font-family: 'Cairo';
   font-size: 50px;
   letter-spacing: 0.05em;
-}
-
-.title::after {
+  &::after {
     content: '';
     position: absolute;
     display: block;
@@ -22,10 +20,11 @@
     border-radius: 1px;
     background-color: #d1411e;
     bottom: 0;
+  }
 }
 
 .description {
-  font-size: 24px;
+  font-size: 20px;
   color: #444;
   width: 70%;
   text-align: center;

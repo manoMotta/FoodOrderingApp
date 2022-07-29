@@ -1,4 +1,4 @@
-import styles from "../styles/PizzaCard.module.css"
+import styles from "../styles/PizzaCard.module.scss"
 import Image from "next/image"
 
 const PizzaCard = () => {

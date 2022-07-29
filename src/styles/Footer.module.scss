@@ -21,20 +21,19 @@
 
 .quote .phrase {
   position: relative;
-}
-
-.quote .phrase::after {
-  position: absolute;
-  content: '';
-  width: 50%;
-  height: 1px;
-
-  bottom: -15px;
-  left: 0;
-
-  transform: translateX(50%);
-  background-color: #fff;
-  border-radius: 1px;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 1px;
+  
+    bottom: -15px;
+    left: 0;
+  
+    transform: translateX(50%);
+    background-color: #fff;
+    border-radius: 1px;
+  }
 }
 
 .medias {
