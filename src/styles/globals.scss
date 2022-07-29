@@ -15,10 +15,34 @@ a {
   box-sizing: border-box;
 }
 
-h1, h2, li {
+h1, h2, h3, li {
   font-family: 'Cairo';
 }
 
-p {
+p, span, label {
   font-family: 'Assistant';
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+}
+
+input[type="button"],input[type="checkbox"], button, label{
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+label, input, button {
+  font-size: inherit;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }

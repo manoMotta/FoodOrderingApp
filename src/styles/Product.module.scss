@@ -1,0 +1,168 @@
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.left {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  padding: 20px;
+}
+
+.imgContainer {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.price {
+  color: #d1411e;
+  font-size: 28px;
+  font-weight: 400;
+  border-bottom: 1px solid #d1411e;
+
+  .size {
+    font-size: 28px;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+
+.desc {
+  font-size: 18px;
+  max-width: 700px;
+}
+
+.sizes {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+
+.size {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+
+  &:nth-child(2) {
+    width: 60px;
+    height: 60px;
+  }
+  &:last-child {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.option {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover .checkbox ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .checkbox{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      background-color: #d1411e;
+    }
+
+    &:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.add {
+  margin-top: 30px;
+}
+
+.number {
+  position: absolute;
+  top: -5px;
+  right: -25px;
+  background-color: #d1411e;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.button {
+  height: 50px;
+  padding: 0 40px;
+  margin-left: 15px;
+  background-color: #d1411e;
+  color: #fff;
+  border: none;
+  font-family: 'Cairo';
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.choose {
+  font-size: 20px;
+}
+
+.increase,
+.decrease,
+.quantity {
+  padding: 10px;
+  border: 1px solid #eee;
+  font-family: 'Cairo';
+  font-weight: 700;
+}
+
+.quantity {
+  width: 40px;
+  text-align: center;
+}
