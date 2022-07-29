@@ -1,0 +1,66 @@
+.title, .phrase {
+  margin: 2px;
+}
+
+.container {
+  padding: 40px 10px;
+  background-color: #d1411e;
+  color: #fff;
+}
+
+.info {
+  display: flex;
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quote .phrase {
+  position: relative;
+}
+
+.quote .phrase::after {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 1px;
+
+  bottom: -15px;
+  left: 0;
+
+  transform: translateX(50%);
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.medias {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.media {
+  cursor: pointer;
+}
+
+.rights {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact, .hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.hours .phrase:nth-child(4),
+.contact .phrase:nth-child(3){
+  margin-top: 8px;
+}
