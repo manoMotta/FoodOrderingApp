@@ -33,7 +33,7 @@
   font-weight: 400;
   border-bottom: 1px solid #d1411e;
 
-  .size {
+  .sizeChosen {
     font-size: 28px;
     border-bottom: 1px solid #fff;
   }
@@ -126,10 +126,6 @@
   }
 }
 
-.add {
-  margin-top: 30px;
-}
-
 .number {
   position: absolute;
   top: -5px;
@@ -157,6 +153,14 @@
   font-size: 20px;
 }
 
+.ingredients {
+  margin-bottom: 30px;
+}
+
+.add {
+  display: flex;
+}
+
 .increase,
 .decrease,
 .quantity {
@@ -169,4 +173,46 @@
 .quantity {
   width: 40px;
   text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .imgContainer {
+    height: 30vh;
+    margin-top: 40px;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    padding: 20px 20px 60px;
+  }
+
+  .title {
+    margin: 5px;
+  }
+
+  .sizes {
+    justify-content: center;
+  }
+
+  .ingredients {
+    margin: auto;
+    width: 180px;
+  }
+
+  .add {
+    flex-direction: column;
+  }
+
+  .button {
+    margin-top: 40px;
+  }
 }

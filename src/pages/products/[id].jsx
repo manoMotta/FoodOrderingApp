@@ -36,7 +36,7 @@ const Product = () => {
       <div className={styles.right}>
         <h1 className={styles.title}>{pizza.name}</h1>
         <span className={styles.price}>${pizza.price[size]}
-          <span className={styles.size}> &nbsp;{size === 0 ? "(Small)" : size === 1 ? "(Medium)" : "(Large)"}</span>
+          <span className={styles.sizeChosen}> &nbsp;{size === 0 ? "(Small)" : size === 1 ? "(Medium)" : "(Large)"}</span>
         </span>
         <p className={styles.desc}>{pizza.desc}</p>
         <h3 className={styles.choose}>Choose the size</h3>
@@ -79,12 +79,13 @@ const Product = () => {
           </label>
 
         </div>
+        <h3 className={styles.choose}>Choose the quantity</h3>
         <div className={styles.add}>
-          <h3 className={styles.choose}>Choose the quantity</h3>
-          <input type="button" value="-" onClick={() => handleNumber("decrease")} className={styles.decrease} />
-          <input type="number" defaultValue={number} className={styles.quantity} />
-          <input type="button" value="+" onClick={() => handleNumber("increase")} className={styles.increase} />
-
+          <div className={styles.chooseInput}>
+            <input type="button" value="-" onClick={() => handleNumber("decrease")} className={styles.decrease} />
+            <input type="number" defaultValue={number} className={styles.quantity} />
+            <input type="button" value="+" onClick={() => handleNumber("increase")} className={styles.increase} />
+          </div>
           <button className={styles.button}>Add to Cart</button>
         </div>
       </div>
