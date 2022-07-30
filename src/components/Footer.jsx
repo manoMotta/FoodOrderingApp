@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.quote}>
-          <Image src="/images/logo.png" width="160" height="69" alt="" />
+          <Image src="/images/logo.png" width="175" height="75" alt="" />
           <p className={styles.phrase}>&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
           <div></div>
           <div className={styles.medias}>
