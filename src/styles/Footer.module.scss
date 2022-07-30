@@ -10,6 +10,8 @@
 
 .info {
   display: flex;
+  gap: 20px;
+  text-align: center;
 }
 
 .quote {
@@ -21,6 +23,7 @@
 
 .quote .phrase {
   position: relative;
+  text-align: center;
   &::after {
     position: absolute;
     content: '';
@@ -62,4 +65,14 @@
 .hours .phrase:nth-child(4),
 .contact .phrase:nth-child(3){
   margin-top: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .info {
+    flex-direction: column;
+  }
+
+  .rights {
+    margin-top: 50px;
+  }
 }

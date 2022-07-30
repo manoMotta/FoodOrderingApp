@@ -89,3 +89,26 @@
   line-height: 22px;
   color: #d1411e;
 }
+
+@media screen and (max-width: 1200px) {
+  .item:nth-child(2) {
+    flex: 1;
+    li {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0px 20px;
+  }
+
+  .item:nth-child(2) {
+    display: none
+  }
+
+  .item:nth-child(1) {
+    flex: 3;
+  }
+}
