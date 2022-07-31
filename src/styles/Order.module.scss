@@ -139,3 +139,71 @@
   transition: 0.3s;
   cursor: default;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .trTitle {
+    display: none;
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .table tr {
+    &::after {
+      width: 0;
+  }
+    
+    td {
+      padding: 6px;
+    }
+  }
+
+  .id::before {
+    content: "Order ID: ";
+  }
+  .name::before {
+    content: "Customer: ";
+  }
+  .address::before {
+    content: "Address: ";
+  }
+  .total::before {
+    content: "Total: ";
+  }
+
+  .row:last-child {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 40px;
+  }
+
+  .done, .undone, .inProgress {
+    margin-bottom: 20px;
+  }
+
+  .right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+  }
+}
