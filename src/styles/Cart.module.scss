@@ -119,3 +119,94 @@
     transform: scale(0.98);
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right {
+    justify-content: center;
+  }
+
+  .wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 20px 20px 60px;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    tr {
+      margin-bottom: 40px;
+      
+      td {
+        padding: 6px;
+      }
+
+      &::after {
+        width: 0;
+      }
+
+      &:not(:nth-child(1))::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        max-width: 100vw;
+        height: 1px;
+        background-color: #000;
+        top: -20px;
+      }
+    }
+  }
+
+  .trTitle {
+    display: none;
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imgContainer {
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .name, .total {
+    font-size: 20px;
+  }
+
+  .extras, .price, .quantity {
+    font-size: 18px;
+  }
+
+  .price::before {
+    content: "Price: ";
+  }
+
+  .quantity::before {
+    content: "Quantity: ";
+  }
+
+  .total::before {
+    content: "Total: ";
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+  }
+}
