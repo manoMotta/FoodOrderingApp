@@ -41,6 +41,10 @@
   font-family: 'Cairo';
 }
 
+.listItem {
+  cursor: pointer;
+}
+
 .text:first-child {
   font-size: 14px;
   font-weight: 600;
