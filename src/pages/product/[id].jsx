@@ -1,6 +1,8 @@
 import styles from '../../styles/Product.module.scss'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useDispatch } from "react-redux"
+import { addProduct } from "../../redux/cartSlice"
 import axios from "axios"
 
 const Product = ({ pizza }) => {
@@ -8,6 +10,8 @@ const Product = ({ pizza }) => {
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [extras, setExtras] = useState([])
+
+  const dispatch = useDispatch();
 
   const changePrice = (number) => {
     setPrice(price + number)
@@ -31,8 +35,6 @@ const Product = ({ pizza }) => {
     }
   };
 
-
-
   const handleQuantity = (event) => {
     if (event == "increase") {
       if (quantity >= 1 && quantity < 10) {
@@ -43,6 +45,10 @@ const Product = ({ pizza }) => {
         setQuantity(quantity -= 1)
       }
     }
+  }
+
+  const handleClick = () => {
+    dispatch(addProduct({ ...pizza, size, extras, price, quantity }))
   }
 
   return (
@@ -92,7 +98,7 @@ const Product = ({ pizza }) => {
             <input type="number" disabled={true} value={quantity} onChange={e => this.setState({ text: e.target.value })} className={styles.quantity} />
             <input type="button" value="+" onClick={() => handleQuantity("increase")} className={styles.increase} />
           </div>
-          <button className={styles.button}>Add to Cart</button>
+          <button className={styles.button} onClick={handleClick}>Add to Cart</button>
         </div>
       </div>
     </div>
