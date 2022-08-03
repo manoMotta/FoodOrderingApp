@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from "react-redux"
 import { addProduct } from "../../redux/cartSlice"
 import axios from "axios"
+import Link from "next/link"
 
 const Product = ({ pizza }) => {
   const [size, setSize] = useState(0)
@@ -98,7 +99,9 @@ const Product = ({ pizza }) => {
             <input type="number" disabled={true} value={quantity} onChange={e => this.setState({ text: e.target.value })} className={styles.quantity} />
             <input type="button" value="+" onClick={() => handleQuantity("increase")} className={styles.increase} />
           </div>
-          <button className={styles.button} onClick={handleClick}>Add to Cart</button>
+          <Link href="/">
+            <button className={styles.button} onClick={handleClick}>Add to Cart</button>
+          </Link>
         </div>
       </div>
     </div>

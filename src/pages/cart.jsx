@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styles from "../styles/Cart.module.scss"
+import OrderDetaild from "../components/OrderDetaild";
 import { useDispatch, useSelector } from "react-redux"
 import { useState, useEffect } from "react";
 import {
@@ -43,6 +44,7 @@ const Cart = () => {
           currency: currency,
         },
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency, showSpinner]);
 
     return (
@@ -66,7 +68,6 @@ const Cart = () => {
                 ],
               })
               .then((orderId) => {
-                // Your code here after create the order
                 return orderId;
               });
           }}
@@ -161,6 +162,9 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      {cash && (
+        <OrderDetaild total={cart.total} createOrder={createOrder} />
+      )}
     </div>
   )
 }
