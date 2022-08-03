@@ -3,7 +3,6 @@
   display: flex;
   font-family: 'Assistant';
   font-size: 18px;
-  min-height: 480px;
 }
 
 .container td {
@@ -75,7 +74,7 @@
 .wrapper {
   width: 70%;
   background-color: #d1411e;
-  padding: 20px 50px 40px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -117,6 +116,27 @@
 
   &:hover {
     transform: scale(0.98);
+  }
+}
+
+.paymentMethods {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.payButton {
+  margin-bottom: 11px;
+  border-radius: 4px;
+  height: 35px;
+  cursor: pointer;
+  border: 0;
+  font-family: 'Cairo';
+  font-weight: 600;
+  font-size: 16px;
+
+  &:hover {
+    background-color: rgb(231, 231, 231)
   }
 }
 
