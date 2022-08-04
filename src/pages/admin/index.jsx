@@ -24,7 +24,7 @@ const Index = ({ orders, products }) => {
 
     if (currentStatus < 2) {
       try {
-        const res = await axios.put("http://localhost:3000/api/orders/" + id, { status: (currentStatus === 1) ? currentStatus + 2 : currentStatus + 1 })
+        await axios.put("http://localhost:3000/api/orders/" + id, { status: (currentStatus === 1) ? currentStatus + 2 : currentStatus + 1 })
         setOrderList([res.data, ...orderList.filter(order => order._id !== id)])
       } catch (err) {
         console.log(err)
@@ -32,6 +32,7 @@ const Index = ({ orders, products }) => {
       console.log(currentStatus);
     } else {
       try {
+        await axios.delete("http://localhost:3000/api/orders/" + id)
         setOrderList(orderList.filter((order) => order._id !== id))
       } catch (err) {
         console.log(err)
@@ -48,6 +49,7 @@ const Index = ({ orders, products }) => {
             <tr className={styles.trTitle}>
               <th>Id</th>
               <th>Customer</th>
+              <th>Address</th>
               <th>Total Price</th>
               <th>Payment Method</th>
               <th>Status</th>
@@ -59,8 +61,9 @@ const Index = ({ orders, products }) => {
               <tr className={styles.trTitle}>
                 <td>{order._id}</td>
                 <td>{order.customer}</td>
+                <td>{order.address}</td>
                 <td>${order.total}.00</td>
-                <td>{order.method === 0 ? (<span>cash</span>) : (<span>paid</span>)}</td>
+                <td>{order.method === 0 ? (<span>Cash</span>) : (<span>Paid</span>)}</td>
                 <td>{status[order.status]}</td>
                 <td>
                   <button className={styles.button} onClick={() => handleStatus(order._id)}>{order.status < 2 ? "Next Stage" : "Remove Order"}</button>
@@ -75,11 +78,12 @@ const Index = ({ orders, products }) => {
         <table className={styles.table}>
           <thead>
             <tr className={styles.trTitle}>
-              <th>Image</th>
+              <th>Pizza</th>
               <th>Id</th>
               <th>Title</th>
-              <th>Price</th>
-              <th>Action</th>
+              <th>Description</th>
+              <th>prices</th>
+              <th>Actions</th>
             </tr>
           </thead>
           {pizzaList.map((product) => (
@@ -88,7 +92,8 @@ const Index = ({ orders, products }) => {
                 <td><Image src={product.img} width={50} height={50} objectFit="cover" alt="" /></td>
                 <td>{product._id}</td>
                 <td>{product.title}</td>
-                <td>${product.prices[0]}.00</td>
+                <td>{product.desc}</td>
+                <td>${product.prices[0]}.00, ${product.prices[1]}.00, ${product.prices[2]}.00</td>
                 <td>
                   <button className={styles.button}>Edit</button>
                   <button className={styles.button} onClick={() => handleDelete(product._id)}>Delete</button>
