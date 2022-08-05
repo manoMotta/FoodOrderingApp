@@ -2,15 +2,22 @@ import Head from 'next/head';
 import Featured from '../components/Featured';
 import PizzaList from '../components/PizzaList';
 import axios from "axios";
+import { useState } from 'react';
+import Add from '../components/Add';
+import AddButton from '../components/AddButton';
 
 export default function Home({ pizzaList, admin }) {
+  const [close, setClose] = useState(true)
+
   return (
     <div>
       <Head>
         <title>Food Delivery App</title>
       </Head>
       <Featured />
+      {admin && <AddButton setClose={setClose} />}
       <PizzaList pizzaList={pizzaList} />
+      {!close && <Add setClose={setClose} />}
     </div>
   );
 }
