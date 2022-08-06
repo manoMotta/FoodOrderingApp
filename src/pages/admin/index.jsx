@@ -80,7 +80,6 @@ const Index = ({ orders, products }) => {
               <th>Pizza</th>
               <th>Id</th>
               <th>Title</th>
-              <th>Description</th>
               <th>prices</th>
               <th>Actions</th>
             </tr>
@@ -91,7 +90,6 @@ const Index = ({ orders, products }) => {
                 <td><Image src={product.img} width={50} height={50} objectFit="cover" alt="" /></td>
                 <td>{product._id}</td>
                 <td>{product.title}</td>
-                <td>{product.desc}</td>
                 <td>${product.prices[0]}.00, ${product.prices[1]}.00, ${product.prices[2]}.00</td>
                 <td>
                   <button className={styles.button}>Edit</button>
