@@ -12,7 +12,7 @@ export default function Home({ pizzaList, admin }) {
   return (
     <div>
       <Head>
-        <title>Food Delivery App</title>
+        <title>Motta&apos;s Pizzeria</title>
       </Head>
       <Featured />
       {admin && <AddButton setClose={setClose} />}
